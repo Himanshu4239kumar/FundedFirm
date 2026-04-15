@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  background: linear-gradient(to right,#117E11 0%,#249524 50%,#107E10 100%);
+  height: 35px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 14px;
+
+}
+.header p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0; 
+  
+
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 35px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.overlay {
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 2.5rem;
+}
+
+.overlay p {
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buy {
+  background: #00ff88;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.telegram {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+}
+.logo img{
+  padding-left: 70px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.nav-links{
+  background:  rgba(105, 99, 99, 0.341);;
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid #7c7e7f;
+}
+.nav-number {
+  color: #00ff88;
+  margin-right: 4px;
+}
+.nav-links a:hover {
+  color: #00ff88;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links a {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+.nav-btns{
+  padding-right: 70px;
+}
+
+.login {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-align: center;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.funded {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 12px 20px;
+  background:  rgba(105, 99, 99, 0.341);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  
+}
+.nav-btns a:hover {
+  color: #00ff88;
+}
+.arrow{
+  color: #00ff88; 
+  padding-left: 5px;
+  align-items: center;
 }
