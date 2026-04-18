@@ -3,7 +3,7 @@ import React from 'react'
 const PricingPlans = () => {
   return (
     <div>
-      
+      sagar
     </div>
   )
 }
