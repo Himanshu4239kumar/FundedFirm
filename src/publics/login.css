@@ -1,0 +1,148 @@
+.login-page {
+  background: linear-gradient(to right,#117E11 0%,#249524 50%,#107E10 100%);
+  position: relative;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+}
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;  
+}
+.top-logo {
+
+  position: absolute;
+  filter: invert(1);
+  padding-left: 45px;
+  width: 150px; 
+  height: auto;
+  z-index: 999;
+
+}
+.small-logo {
+  height: 35px;
+}
+.login-left {
+  position: absolute;
+  
+  align-items: center;
+  width: 25%;
+  padding: 100px;
+  
+}
+
+.login-left h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.login-left p {
+  color: #666;
+  margin-bottom: 25px;
+}.input-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #eaeaea;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: gray;
+}
+
+
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.signin {
+  width: 100%;
+  padding: 14px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.google {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.googleLogo{
+  font-size: 20px;
+
+}
+
+.signup {
+  margin-top: 20px;
+}
+
+/* RIGHT SIDE */
+.login-right img {
+  position: absolute;
+  right: 0;
+  padding-right: 60px;
+  padding-top: 15px;
+  height: 96vh;
+}
+.password-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #eaeaea;
+  outline: none;
+}
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: gray;
+}
+
+.eye {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 18px;
+}

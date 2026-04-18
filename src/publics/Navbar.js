@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from "react";
-import { Link, Route, Routes } from 'react-router';
 import { IoMdArrowForward } from "react-icons/io";
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router';
 const Navbar = () => {
     const messages = [
         "Weekly - Biweekly Payouts Launched",
@@ -43,7 +43,7 @@ const Navbar = () => {
                             </div>
                             <div className="nav-links">
                                 <Nav defaultActiveKey="/home">
-                                    <Nav.Link as={Link} to={'/ '}><span className="nav-number">0.1/</span> Home</Nav.Link>
+                                    <Nav.Link as={Link} to={'/'}><span className="nav-number">0.1/</span> Home</Nav.Link>
                                     <Nav.Link as={Link} to={'/rules'} ><span className="nav-number">0.2/</span> Trading Rules</Nav.Link>
                                     <Nav.Link as={Link} to={'/insights'} ><span className="nav-number">0.3/</span> Insights </Nav.Link>
                                     <Nav.Link as={Link} to={'/faq'} ><span className="nav-number">0.4/</span> FAQ</Nav.Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
                             </div>
                             <div className="nav-btns">
                                 <Button as={Link} to={'/login'} className="login">Login</Button> 
-                                <Button href="/Home" className="funded">Get Funded<span className='arrow'><IoMdArrowForward /></span></Button>
+                                <Button as={Link} to={'/'}  className="funded">Get Funded<span className='arrow'><IoMdArrowForward /></span></Button>
                             </div>
                         </div>
                     </Col>

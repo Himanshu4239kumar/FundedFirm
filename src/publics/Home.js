@@ -1,12 +1,6 @@
 import React from 'react'
 import Navbar from "./Navbar";
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link, Route, Routes } from 'react-router-dom';
-import Rules from './Rules';
-import Insights from './Insights';
-import Faq from './Faq';
-import Contact from './Contact';
-import Login from './Login';
 
 const Home = () => {
     return (
@@ -34,14 +28,6 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <Routes>
-                            <Route path='/ ' element={<Home />} />
-                            <Route path='/rules' element={<Rules />} />
-                            <Route path='/insights' element={<Insights />} />
-                            <Route path='/faq' element={<Faq />} />
-                            <Route path='/contact' element={<Contact />} />
-                            <Route path='/login' element={<Login />} />
-                        </Routes>
                     </Col>
                 </Row>
             </Container>
