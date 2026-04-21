@@ -1,3 +1,6 @@
+.error{
+  color: red;
+}
 .login-page {
   background: linear-gradient(to right,#117E11 0%,#249524 50%,#107E10 100%);
   position: relative;
@@ -145,4 +148,8 @@
   cursor: pointer;
   transform: translateY(-50%);
   font-size: 18px;
+}
+.forgot:hover {
+           
+  text-decoration: underline; 
 }

@@ -25,7 +25,7 @@ const Login = () => {
 
       password: Yup.string()
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
-          "Password must be 8+ chars, include A-Z, a-z, number & symbol"
+          <span className="error">"Password must be 8+ chars, include A-Z, a-z, number & symbol"</span>
         )
         .required("Password is required"),
     }),
