@@ -24,8 +24,7 @@ const Login = () => {
         .required("Email is required"),
 
       password: Yup.string()
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
           "Password must be 8+ chars, include A-Z, a-z, number & symbol"
         )
         .required("Password is required"),
@@ -129,7 +128,7 @@ const Login = () => {
 
       {/* RIGHT IMAGE */}
       <div className="login-right">
-        <img src="https://my.fundedfirm.com/login-bg.webp"></img>
+        <img src="https://my.fundedfirm.com/login-bg.webp" alt="info"/>
       </div>
 
     </div>
