@@ -1,40 +1,52 @@
-.error{
+.error {
   color: red;
 }
+
 .login-page {
-  background: linear-gradient(to right,#117E11 0%,#249524 50%,#107E10 100%);
+  background: linear-gradient(to left ,
+      black 0%,
+      #eaf7f1 20%,
+      #cfeee0 40%,
+      blue 50%,
+      red 60%,
+      #eaf7f1 80%,
+      #ffffff 100%)!important;
   position: relative;
   display: flex;
   font-family: 'Poppins', sans-serif;
 }
+
 .logo-container {
   position: absolute;
   top: 20px;
   left: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;  
+  gap: 10px;
 }
+
 .top-logo {
 
   position: absolute;
   filter: invert(1);
   padding-left: 45px;
-  width: 150px; 
+  width: 150px;
   height: auto;
   z-index: 999;
 
 }
+
 .small-logo {
   height: 35px;
 }
+
 .login-left {
   position: absolute;
-  
+
   align-items: center;
   width: 25%;
   padding: 100px;
-  
+
 }
 
 .login-left h2 {
@@ -45,7 +57,9 @@
 .login-left p {
   color: #666;
   margin-bottom: 25px;
-}.input-box {
+}
+
+.input-box {
   position: relative;
   margin-bottom: 15px;
 }
@@ -102,7 +116,8 @@
   justify-content: center;
   gap: 10px;
 }
-.googleLogo{
+
+.googleLogo {
   font-size: 20px;
 
 }
@@ -119,6 +134,7 @@
   padding-top: 15px;
   height: 96vh;
 }
+
 .password-box {
   position: relative;
   margin-bottom: 15px;
@@ -132,6 +148,7 @@
   background: #eaeaea;
   outline: none;
 }
+
 .input-icon {
   position: absolute;
   left: 10px;
@@ -149,7 +166,8 @@
   transform: translateY(-50%);
   font-size: 18px;
 }
+
 .forgot:hover {
-           
-  text-decoration: underline; 
+
+  text-decoration: underline;
 }

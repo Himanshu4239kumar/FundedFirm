@@ -52,7 +52,7 @@ const Navbar = () => {
                             </div>
                             <div className="nav-btns">
                                 <Button as={Link} to={'/login'} className="login">Login</Button> 
-                                <Button as={Link} to={'/'}  className="funded">Get Funded<span className='arrow'><IoMdArrowForward /></span></Button>
+                                <Button as={Link} to={'/register'}  className="funded">Get Funded<span className='arrow'><IoMdArrowForward /></span></Button>
                             </div>
                         </div>
                     </Col>

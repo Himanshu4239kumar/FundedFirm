@@ -7,6 +7,7 @@ import Insights from './publics/Insights';
 import Faq from './publics/Faq';
 import Contact from './publics/Contact';
 import Login from './publics/Login';
+import Register from './publics/Register';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Route index element={<Login/>} />
+        </Route>
+        <Route path='/register'>
+          <Route index element={<Register/>} />
         </Route>
       </Routes>
     

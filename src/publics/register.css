@@ -1,0 +1,196 @@
+/* Puri screen ka setup */
+.container-fluid {
+    padding: 0 !important;
+    background: radial-gradient(circle at center,
+            #b2e6d1 10%,
+            #cce8da 25%,
+            #ffffff 65%);
+    /* Light background jaisa image mein hai */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0 !important;
+    min-height: 100vh;
+}
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-logo {
+
+  position: absolute;
+  filter: invert(1);
+  padding-left: 45px;
+  width: 150px;
+  height: auto;
+  z-index: 999;
+
+}
+
+.small-logo {
+  height: 35px;
+}
+
+
+/* LEFT SIDE - FORM SECTION */
+.register-left {display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top:160px ;
+    padding-left: 15% !important; 
+    padding-right: 5% !important;
+    
+    background: transparent;
+}
+
+/* Form ka container - Isse width control hogi aur 2nd photo jaisa dikhega */
+.register-left form,
+.register-left h2,
+.register-left>p,
+.register-left .signup {
+    width: 100%;
+    max-width: 420px;
+    /* Form ko stretch hone se rokega */
+}
+
+.register-left h2 {
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.register-left>p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* INPUT ROW (First & Last Name) */
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.field {
+    flex: 1;
+}
+
+.input-label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* INPUT BOX & ICONS */
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 8px 15px 8px 42px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fdfdfd;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #2ecc71;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: #999;
+    font-size: 18px;
+}
+
+/* CHECKBOX & OPTIONS */
+.login-options {
+    margin: 12px 0;
+}
+
+.agree {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.agree span {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+/* CONTINUE BUTTON */
+.signin {
+    width: 100%;
+    padding: 10px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* SIGN IN LINK */
+.signup {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.signup span {
+    color: #2ecc71;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* RIGHT SIDE - IMAGE SECTION */
+.login-right {
+    /* Greenish gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-right img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 60px;
+    height: 96vh;
+
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 991px) {
+    .login-right {
+        display: none;
+        /* Mobile par image hide ho jayegi layout kharab na ho */
+    }
+
+    .register-left {
+        padding: 40px 20px !important;
+    }
+}
