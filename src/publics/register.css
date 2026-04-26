@@ -1,16 +1,15 @@
-/* Puri screen ka setup */
-.container-fluid {
+
+.register-page-wrapper{
     padding: 0 !important;
     background: radial-gradient(circle at center,
             #b2e6d1 10%,
             #cce8da 25%,
             #ffffff 65%);
-    /* Light background jaisa image mein hai */
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-.row {
+register-page-wrapper .row {
     margin: 0 !important;
     min-height: 100vh;
 }
@@ -18,6 +17,7 @@
   position: absolute;
   top: 20px;
   left: 30px;
+   padding-left: 40px !important;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -38,8 +38,6 @@
   height: 35px;
 }
 
-
-/* LEFT SIDE - FORM SECTION */
 .register-left {display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,14 +48,13 @@
     background: transparent;
 }
 
-/* Form ka container - Isse width control hogi aur 2nd photo jaisa dikhega */
+
 .register-left form,
 .register-left h2,
 .register-left>p,
 .register-left .signup {
     width: 100%;
     max-width: 420px;
-    /* Form ko stretch hone se rokega */
 }
 
 .register-left h2 {
@@ -73,7 +70,6 @@
     font-size: 15px;
 }
 
-/* INPUT ROW (First & Last Name) */
 .input-row {
     display: flex;
     gap: 15px;
@@ -92,7 +88,7 @@
     color: #333;
 }
 
-/* INPUT BOX & ICONS */
+
 .input-box {
     position: relative;
     display: flex;
@@ -121,7 +117,7 @@
     font-size: 18px;
 }
 
-/* CHECKBOX & OPTIONS */
+
 .login-options {
     margin: 12px 0;
 }
@@ -139,7 +135,7 @@
     font-weight: 600;
 }
 
-/* CONTINUE BUTTON */
+
 .signin {
     width: 100%;
     padding: 10px;
@@ -153,7 +149,7 @@
     margin-top: 10px;
 }
 
-/* SIGN IN LINK */
+
 .signup {
     text-align: center;
     margin-top: 25px;
@@ -166,9 +162,8 @@
     cursor: pointer;
 }
 
-/* RIGHT SIDE - IMAGE SECTION */
+
 .login-right {
-    /* Greenish gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,15 +174,26 @@
     top: 0;
     right: 0;
     padding-right: 60px;
+    
+    padding-top: 15px;
     height: 96vh;
 
 }
+.error-text {
+    color: #e74c3c;
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: 500;
+}
 
-/* RESPONSIVE FIX */
+/* Input box border red ho jaye error par */
+.field input.error {
+    border-color: #e74c3c;
+}
+
 @media (max-width: 991px) {
     .login-right {
         display: none;
-        /* Mobile par image hide ho jayegi layout kharab na ho */
     }
 
     .register-left {

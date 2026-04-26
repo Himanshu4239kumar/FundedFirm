@@ -27,14 +27,14 @@ const Navbar = () => {
 
     return (
         <div>
-            <Container>
+            <Container className='menu'>
                 <Row>
                     <Col className='header'>
                         <p>🚀 Update 2.0: {messages[index]}</p>
                     </Col>
                 </Row>
             </Container>
-            <Container>
+            <Container className='menu'>
                 <Row>
                     <Col>
                         <div className="navbar">

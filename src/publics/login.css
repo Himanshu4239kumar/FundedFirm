@@ -1,30 +1,45 @@
-.error {
-  color: red;
+.login-page-wrapper {
+    padding: 0 !important;
+    background: radial-gradient(circle at center,
+            #b2e6d1 10%,
+            #cce8da 25%,
+            #ffffff 65%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.login-page {
-  background: linear-gradient(to left ,
-      black 0%,
-      #eaf7f1 20%,
-      #cfeee0 40%,
-      blue 50%,
-      red 60%,
-      #eaf7f1 80%,
-      #ffffff 100%)!important;
-  position: relative;
-  display: flex;
-  font-family: 'Poppins', sans-serif;
+.login-left-section {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20% !important;
+    padding-top: 140px;
 }
 
+.form-content {
+    max-width: 420px;
+    width: 100%;
+}
+
+.form-content h2 {
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 2px;
+}
+
+.form-content p {
+    color: #666;
+    margin-bottom: 5px;
+}
 .logo-container {
   position: absolute;
   top: 20px;
   left: 30px;
+  
+  padding-left: 40px !important;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px !important;
 }
-
 .top-logo {
 
   position: absolute;
@@ -40,134 +55,119 @@
   height: 35px;
 }
 
-.login-left {
-  position: absolute;
-
-  align-items: center;
-  width: 25%;
-  padding: 100px;
-
-}
-
-.login-left h2 {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.login-left p {
-  color: #666;
-  margin-bottom: 25px;
+.input-label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #000000 !important;
 }
 
 .input-box {
-  position: relative;
-  margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .input-box input {
-  width: 100%;
-  padding: 12px 12px 12px 40px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #eaeaea;
-  outline: none;
-  font-size: 14px;
+    width: 100%;
+    padding: 10px 15px 10px 45px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
 }
 
 .input-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: gray;
+    position: absolute;
+    left: 15px;
+    color: #000000;
 }
 
-
-
-.login-options {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  font-size: 14px;
+.login-options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
 }
 
-.signin {
-  width: 100%;
-  padding: 14px;
-  background: #2ecc71;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
 }
 
-.google {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.forgot-pass {
+    cursor: pointer;
+    color: #333;
 }
 
-.googleLogo {
-  font-size: 20px;
-
+.signin-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.signup {
-  margin-top: 20px;
+.google-btn {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* RIGHT SIDE */
-.login-right img {
-  position: absolute;
-  right: 0;
-  padding-right: 60px;
-  padding-top: 15px;
-  height: 96vh;
+.signup-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
 }
 
-.password-box {
-  position: relative;
-  margin-bottom: 15px;
+.signup-link span {
+    color: #2ecc71;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-.password-box input {
-  width: 100%;
-  padding: 12px 12px 12px 40px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  background: #eaeaea;
-  outline: none;
+.error-text {
+    color: #ff4d4d;
+    font-size: 11px;
+    margin-top: 5px;
 }
 
-.input-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: gray;
+.login-right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.login-right-section img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 60px;
+    padding-top: 15px;
+    height: 96vh;
+
+}
 .eye {
   position: absolute;
-  right: -40px;
-  top: 50%;
+  right: 15px;
+  top: 12px;
   cursor: pointer;
-  transform: translateY(-50%);
   font-size: 18px;
-}
-
-.forgot:hover {
-
-  text-decoration: underline;
 }

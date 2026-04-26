@@ -1,137 +1,124 @@
-import React, { useState } from "react";
+import React from "react";
+import "./login.css"; // Iska CSS niche hai
 import fontlogo from "../assets/fontlogo.png";
 import logo from "../assets/logo.png";
-import "./login.css";
 import { useFormik } from "formik";
+import { Container, Row, Col } from "react-bootstrap";
 import * as Yup from "yup";
-import { FcGoogle } from "react-icons/fc";
-import { FaRegUserCircle } from "react-icons/fa";
+import { useState } from "react";
+import { FaRegUserCircle, FaLock } from "react-icons/fa";
+
+
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { MdLockOutline } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const formik = useFormik({
     initialValues: {
-      email: "",
+      identifier: "", // Email ya Phone ke liye
       password: "",
+      rememberMe: false
     },
-
     validationSchema: Yup.object({
-      email: Yup.string()
-        .email("Invalid email format")
-        .required("Email is required"),
-
-      password: Yup.string()
-        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
-          <span className="error">"Password must be 8+ chars, include A-Z, a-z, number & symbol"</span>
-        )
-        .required("Password is required"),
+      identifier: Yup.string().required("Email or Phone number is required"),
+      password: Yup.string().min(6, "Password must be at least 6 characters").required("Required"),
     }),
-
     onSubmit: (values) => {
-      console.log(values);
-      alert("Login Successful 🚀");
-    },
+      console.log("Login Data:", values);
+      alert("Login Successful! 🚀");
+    }
   });
 
   return (
-    <div className="login-page">
-      <div  className="logo-container">
-        <img
-          src={fontlogo}
-          style={{ width: "150px" }}
-          alt="logo"
-          className="top-logo"
-        />
-        <img
-          src={logo}
-          alt="logo"
-          className="small-logo"
-        />
-      </div>
-
-      {/* LEFT */}
-      <div className="login-left">
-        <h2>Welcome Back</h2>
-        <p>Please enter your details</p>
-
-        <form onSubmit={formik.handleSubmit}>
-
-          {/* EMAIL */}
-          <div className="input-box">
-
-            <FaRegUserCircle className="input-icon" />
-            <input
-              type="text"
-              name="email"
-              placeholder="Email or phone"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
+    <Container fluid className="login-page-wrapper">
+      <Row>
+        {/* LEFT SIDE (FORM) */}
+        <Col md={6} className="login-left-section">
+          <div className="logo-container">
+            <img src={fontlogo} alt="logo" className="top-logo" />
+            <img src={logo} alt="small-logo" className="small-logo" />
           </div>
 
-          {formik.touched.email && formik.errors.email && (
-            <div className="error">{formik.errors.email}</div>
-          )}
+          <div className="form-content">
+            <h2>Welcome Back</h2>
+            <p>Welcome back! Please enter your details.</p>
 
-          {/* PASSWORD */}
-          <div className="password-box">
+            <form onSubmit={formik.handleSubmit}>
+              {/* EMAIL / PHONE */}
+              <p className="input-label">Your email / phone</p>
+              <div className="input-box">
+                <FaRegUserCircle className="input-icon" />
+                <input
+                  name="identifier"
+                  type="text"
+                  placeholder="Enter Email or Phone Number"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.identifier}
+                />
+              </div>
+              {formik.touched.identifier && formik.errors.identifier && (
+                <div className="error-text">{formik.errors.identifier}</div>
+              )}
 
-            <MdLockOutline className="input-icon" />
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
+              {/* PASSWORD */}
+              <p className="input-label">Password</p>
+              <div className="input-box password-field">
+                <FaLock className="input-icon" />
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Enter password"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.password}
+                /><span
+                  className="eye"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <IoEyeOff /> : <IoEye />}
+                </span>
+              </div>
+              {formik.touched.password && formik.errors.password && (
+                <div className="error-text">{formik.errors.password}</div>
+              )}
 
-            <span
-              className="eye"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <IoEyeOff /> : <IoEye />}
-            </span>
+              {/* REMEMBER & FORGOT */}
+              <div className="login-options-row">
+                <label className="remember-me">
+                  <input
+                    type="checkbox"
+                    name="rememberMe"
+                    onChange={formik.handleChange}
+                    checked={formik.values.rememberMe}
+                  />
+                  Remember me
+                </label>
+                <span className="forgot-pass">Forgot Password?</span>
+              </div>
+
+              {/* SIGN IN BUTTON */}
+              <button type="submit" className="signin-btn">Sign in</button>
+
+              {/* GOOGLE LOGIN */}
+              <button type="button" className="google-btn">
+                <FcGoogle size={20} /> Continue with Google
+              </button>
+            </form>
+
+            <p className="signup-link">
+              Don't have an account? <span>Sign Up</span>
+            </p>
           </div>
+        </Col>
 
-          {formik.touched.password && formik.errors.password && (
-            <div className="error">{formik.errors.password}</div>
-          )}
-
-          <div className="login-options">
-            <span>Remember me</span>
-            <span className="forgot">Forgot Password?</span>
-          </div>
-
-          <button type="submit" className="signin">
-            Sign in
-          </button>
-        </form>
-
-        <button
-          type="button"
-          className="google"
-          onClick={() => alert("Google login")}
-        >
-          <FcGoogle className="googleLogo" />Continue with Google
-        </button>
-
-        <p className="signup">
-          Don't have an account?{" "}
-          <span onClick={() => alert("Go to Signup")}>Sign Up</span>
-        </p>
-      </div>
-
-      {/* RIGHT IMAGE */}
-      <div className="login-right">
-        <img src="https://my.fundedfirm.com/login-bg.webp" alt="info"/>
-      </div>
-
-    </div>
+        {/* RIGHT SIDE (IMAGE) */}
+        <Col md={6} className="login-right-section">
+          <img src="https://my.fundedfirm.com/login-bg.webp" alt="bg" />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
