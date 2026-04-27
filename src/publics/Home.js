@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from "./Navbar";
+import backgroung from "../assets/background.mp4";
+
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Home = () => {
@@ -7,7 +9,7 @@ const Home = () => {
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col lg={6} md={12}>
                         <div className='navbar-fixed-top' ><Navbar /></div>
 
 
@@ -32,13 +34,22 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="highlights-section">
+
+            <Container className="highlights-wrapper highlights-section">
+                <video autoPlay loop muted playsInline className="blackvideo">
+                    <source src={backgroung} type="video/mp4" />
+                </video>
+
+
+
+                {/* ROW 1 → BOX */}
                 <Row className="justify-content-center">
-                    <Col lg={10} md={12}>
+                    <Col xs="auto" className="d-flex justify-content-center">
 
-                        {/* BOX */}
+
+
+
                         <div className="highlights-box">
-
                             <div className="item">Zero Payout Denial</div>
 
                             <div className="divider d-none d-md-block"></div>
@@ -47,23 +58,21 @@ const Home = () => {
 
                             <div className="divider d-none d-md-block"></div>
 
-                            <div className="item">On-demand withdrawals</div>
-
+                            <div className="item">On-demand<br/>withdrawals</div>
                         </div>
 
-                        {/* BUTTON */}
-                        <div className="text-center">
-                            <button className="highlight-btn">Key Highlights</button>
-                        </div>
 
-                        {/* TEXT */}
-                        <p className="highlight-text text-center">
+
+
+                        <button className="highlight-btn mt-5">Key Highlights</button>
+                        <p className="highlight-text text-center mt-4">
                             We believe those with proven skills deserve better opportunities, rewards, and services.
                             As a leading FundedFirm, we provide the professional ecosystem you deserve.
                         </p>
-
                     </Col>
                 </Row>
+
+
             </Container>
         </div>
     )
