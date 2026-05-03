@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./register.css";
 import fontlogo from "../assets/fontlogo.png";
 import logo from "../assets/logo.png";
@@ -7,8 +7,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import * as Yup from "yup";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
+import Password from "./Password"; // Yeh zaroori hai
 
 const Register = () => {
+    const [step, setStep] = useState(1);
+    const [registerData, setRegisterData] = useState(null);
+
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -18,20 +22,31 @@ const Register = () => {
             agree: false
         },
         validationSchema: Yup.object({
-            firstName: Yup.string().matches(/^[A-Za-z]+$/, "Only alphabets are allowed").required("First name is required"),
-            lastName: Yup.string().matches(/^[A-Za-z]+$/, "Only alphabets are allowed").required("Last name is required"),
+            firstName: Yup.string().matches(/^[A-Z . a-z]+$/, "Only alphabets are allowed").required("First name is required"),
+            lastName: Yup.string().matches(/^[A-Z . a-z]+$/, "Only alphabets are allowed").required("Last name is required"),
             email: Yup.string().email("Invalid email address").required("Email is required"),
             phone: Yup.string()
-                .matches(/^[0-9]+$/, "Must be only digits") // Sirf number allow karega
+                .matches(/^[0-9]+$/, "Must be only digits")
                 .min(10, "Must be at least 10 digits")
                 .required("Phone number is required"),
             agree: Yup.boolean().oneOf([true], "You must accept terms")
         }),
         onSubmit: (values) => {
-            console.log("Form Data Submitted:", values); // Ab console mein dikhega
-            alert("Registered 🚀");
+            setRegisterData(values); 
+            setStep(2); 
         }
     });
+
+
+    if (step === 2) {
+        return (
+            <Password 
+                registerData={registerData} 
+                goBack={() => setStep(1)} 
+            />
+        );
+    }
+
 
     return (
         <Container fluid className="register-page-wrapper">
@@ -47,7 +62,6 @@ const Register = () => {
                     <p>Register now and start your adventure.</p>
 
                     <form onSubmit={formik.handleSubmit}>
-                        {/* NAME ROW */}
                         <div className="input-row">
                             <div className="field">
                                 <p className="input-label">Your first name</p>
@@ -86,7 +100,6 @@ const Register = () => {
                             </div>
                         </div>
 
-                        {/* EMAIL */}
                         <p className="input-label">Your email</p>
                         <div className="input-box">
                             <MdEmail className="input-icon" />
@@ -103,7 +116,6 @@ const Register = () => {
                             <div className="error-text">{formik.errors.email}</div>
                         ) : null}
 
-                        {/* PHONE */}
                         <p className="input-label">Phone number</p>
                         <div className="input-box">
                             <MdPhone className="input-icon" />
@@ -120,7 +132,6 @@ const Register = () => {
                             <div className="error-text">{formik.errors.phone}</div>
                         ) : null}
 
-                        {/* CHECKBOX */}
                         <div className="login-options">
                             <label className="agree">
                                 <input
@@ -136,7 +147,6 @@ const Register = () => {
                             <div className="error-text">{formik.errors.agree}</div>
                         ) : null}
 
-                        {/* BUTTON */}
                         <button type="submit" className="signin">
                             Continue
                         </button>

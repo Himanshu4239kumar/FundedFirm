@@ -14,6 +14,8 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const phoneRegex = /^[0-9]{10}$/;
   const formik = useFormik({
     initialValues: {
       identifier: "", // Email ya Phone ke liye
@@ -21,8 +23,19 @@ const Login = () => {
       rememberMe: false
     },
     validationSchema: Yup.object({
-      identifier: Yup.string().required("Email or Phone number is required"),
-      password: Yup.string().min(6, "Password must be at least 6 characters").required("Required"),
+      identifier:Yup.string()
+        .required("Email or Phone number is required")
+        .test(
+          "email-or-phone",
+          "Enter a valid email or a 10-digit phone number",
+          (value) => {
+            if (!value) return false;
+            return emailRegex.test(value) || phoneRegex.test(value);
+          }
+        ),
+      password:Yup.string()
+        .required("Password is required")
+        .min(8, "Password must be at least 8 characters long")
     }),
     onSubmit: (values) => {
       console.log("Login Data:", values);
@@ -68,7 +81,7 @@ const Login = () => {
                 <FaLock className="input-icon" />
                 <input
                   name="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter password"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}

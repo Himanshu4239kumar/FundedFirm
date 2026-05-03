@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from "./Navbar";
+import banner from "../assets/banner.mp4";
 import backgroung from "../assets/background.mp4";
 
 import { Col, Container, Row } from 'react-bootstrap';
@@ -19,7 +20,7 @@ const Home = () => {
 
                             <div className="hero">
                                 <video autoPlay loop muted playsInline className="video-bg">
-                                    <source src="https://www.fundedfirm.com/video/banner.mp4" type="video/mp4" />
+                                    <source src={banner} type="video/mp4" />
                                 </video>
                                 <div className="overlay">
                                     <h1>FundedFirm: Most Trusted Firm</h1>
